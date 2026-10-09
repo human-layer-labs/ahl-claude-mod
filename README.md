@@ -2,11 +2,13 @@
 
 A Claude Code-specific integration point for Agent Human Layer (AHL). This repository is separate from [`agent-human-layer`](https://github.com/human-layer-labs/agent-human-layer) so the provider-independent AHL policy does not depend on a Claude Code integration.
 
-## v0.1: documentation only
+## v0.3: AHL Micro, still no runtime Mod
 
-The v0.2 decision-flow enforcement decision is recorded in [docs/decision-flow.md](docs/decision-flow.md).
+The v0.2 decision-flow enforcement decision is recorded in [docs/decision-flow.md](docs/decision-flow.md). On 2026-10-09 the provider-independent AHL runtime moved to **AHL Micro**: one-page runtime guidance plus a compact Scope Card for child agents.
 
-v0.1 deliberately contains no runtime enforcement. Claude Code's native controls remain responsible for its configured permission checks, sandbox and host security; AHL owns semantic Goal, Target, Authority and Boundary reasoning. The middle integration layer is empty until evidence shows it is needed. The absence of code is an architecture decision, not unfinished work.
+This repository still deliberately contains no runtime enforcement. Claude Code's native controls remain responsible for configured permission checks, sandbox and host security. AHL Micro owns the lightweight semantic runtime guard. The middle integration layer remains empty until evidence shows a distinct mechanical failure it can prevent. The absence of code is an architecture decision, not unfinished work.
+
+A Claude-specific Mod must **not** reintroduce the costs AHL Micro removed: no hidden full-policy preload, no per-turn AHL injection, no automatic review loop, no blanket STOP-on-uncertainty wrapper, and no duplicate recovery ceremony.
 
 Claude Code behavior depends on configuration and execution mode. Permission modes, auto mode, `bypassPermissions` and `--dangerously-skip-permissions`, managed settings, and sandbox availability affect which native controls apply. This project makes no claim that native controls protect every configuration or execution mode. In particular, workspace reachability (“Host Roots”) is capability, not AHL Authorization.
 
