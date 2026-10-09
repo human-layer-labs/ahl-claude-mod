@@ -10,7 +10,11 @@ The observed evidence does not justify interception:
 
 ## Current stance
 
-No Mod, gate, added salience rules, or change to how review rounds are launched. First run the current AHL Skill by itself and gather clean evidence. Adding salience at the same time would confound that measurement.
+**AHL Micro is now the current runtime baseline (2026-10-09).** No Mod, gate, hidden salience injection, or change to how review rounds are launched.
+
+Do not compensate for old AHL startup/review Tax by moving that same ceremony into a Claude-specific layer. In particular, do not preload long AHL references, inject them every turn, or add a generic STOP/review wrapper around AHL Micro.
+
+Measure the deployed AHL Micro by itself. Reopen the Mod question only if repeated, material failures remain and a distinct Claude runtime signal can address them with less cost than the failure it prevents.
 
 ## Considered controls
 
